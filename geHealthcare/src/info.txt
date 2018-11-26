@@ -1,0 +1,62 @@
+aabbc
+
+a|a|bbc
+a|ab|bc
+a|abb|c
+
+aa|b|bc
+aa|bb|c
+
+aab|b|c
+
+
+abcde
+
+a|b|cde
+a|bc|de
+a|bcd|e
+
+ab|c|de
+ab|cd|e
+
+abc|d|e
+
+
+
+abcde,1,2					-> a
+  bcde,1,1 					-> b
+    cde,1,0					-> cde
+  bcde,2,1					-> bc
+    de,1,0					-> de
+  bcde,3,1					-> bcd
+    e,1,0					-> e
+abcde,2,2					-> ab
+  cde,1,1					-> c
+   de,1,0					-> de
+  cde,2,1					-> cd
+    e,1,0					-> e
+abcde,3,2					-> abc
+  de,1,1					-> d
+   e,1,0					-> e    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
