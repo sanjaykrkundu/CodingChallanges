@@ -46,7 +46,7 @@ public class PalindromeCut {
 		printSubString(str, len + 1, cut);
 	}
 
-	static int subString(String str, int len, int cut) {
+	static int subString2(String str, int len, int cut) {
 		if (n - k < len || cut < 0 || str.length() < len + cut)
 			return 0;
 		if (cut == 0) {
@@ -64,7 +64,24 @@ public class PalindromeCut {
 		else 
 			return xx;
 	}
-
+	static int subString(String str, int len, int cut,int c) {
+		if (n - k < len || cut < 0 || str.length() < len + cut)
+			return 0;
+		if (cut == 0) {
+			//System.out.println(str.substring(0));
+			if (isPal(str.substring(0)))
+				return c+1;
+			else
+				return c;
+		}
+		//System.out.println(str.substring(0,len));
+		int x = 0;
+		if(isPal(str.substring(0, len)))
+           	 x++;
+		int xx = subString(str.substring(len), 1, cut - 1,c+x) + subString(str, len + 1, cut,c);
+		return xx;
+		
+	}
 	static int n, k;
 
 	public static void main(String args[]) throws Exception {
@@ -78,22 +95,6 @@ public class PalindromeCut {
 		 */
 		count = subString(str, 1, k);
 		System.out.println(count);
-		
-		
-		isPal("a");
-		isPal("a");
-		isPal("bbc");
-		isPal("ab");
-		isPal("bc");
-		isPal("abb");
-		isPal("c");
-		isPal("aa");
-		isPal("b");
-		isPal("bc");
-		isPal("bb");
-		isPal("c");
-		isPal("aab");
-		isPal("b");
-		isPal("c");
+
 	}
 }
